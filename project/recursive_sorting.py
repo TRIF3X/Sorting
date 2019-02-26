@@ -14,9 +14,11 @@ def merge_sort( arr ):
         merge_sort(left)
         merge_sort(right)
 
-        # Variables used when sorting
+        # Keep track of position of left side
         i = 0
+        # Keep track of position of right side
         j = 0
+        # Keep track of current position of the array we're putting back together
         k = 0
 
         # while the array on the left and the right is greater than the index 
