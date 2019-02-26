@@ -1,9 +1,18 @@
-### helper function
-def merge( arrA, arrB ):
-
-
 ### recursive sorting function
 def merge_sort( arr ):
+
+    # Checks to see if the array is current longer than 1 element
+    if len(arr) > 1:
+        # mid is the length of the array divided by 2 rounded down using //
+        mid = len(arr) // 2
+        # left half of the array is the array from 0 to the mid variable
+        left = arr[:mid]
+        # right half of the array is the array from the mid variable to the end
+        right = arr[mid:]
+
+        # Recursively call merge_sort until everything is divided into 1
+        merge_sort(left)
+        merge_sort(right)
 
 
     return arr
