@@ -53,7 +53,7 @@ def merge_sort( arr ):
     return arr
 
 
-print(merge_sort([78, 248, 61, 233, 11, 212, 142, 91, 197, 203, 192, 111, 234, 66, 178, 38, 73, 188, 211, 114]))
+print(merge_sort([78, 248, 61, 233, 11, 212, 142, 91, 197, 203, 192, 111, 234, 66, 178, 38, 73, 188, 211, 114, 22]))
 
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
@@ -68,9 +68,23 @@ def merge_sort_in_place(arr, l, r):
 
 
 # TO-DO: implement the Quick Sort function below USING RECURSION
-def quick_sort( arr, low, high ):
+def quick_sort( arr ):
+    if len(arr) < 2:
+        return arr
+    else:
+        pivot = arr[0]
+        less = [i for i in arr[1:] if i <= pivot]
+        greater = [i for i in arr[1:] if i > pivot ]
+
+        return quick_sort(less) + [pivot] + quick_sort(greater)
 
     return arr
+
+arr1 = [78, 248, 61, 233, 11, 212, 142, 91, 197, 203, 192, 111, 234, 66, 178, 38, 73, 188, 211, 114, 22]
+
+print(quick_sort(arr1))
+
+# len(arr) -1 points to the last index because there is 21 numbers but indexes start at 0
 
 
 # STRETCH: implement the Timsort function below
