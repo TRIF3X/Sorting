@@ -69,13 +69,18 @@ def merge_sort_in_place(arr, l, r):
 
 # TO-DO: implement the Quick Sort function below USING RECURSION
 def quick_sort( arr ):
+    # If the length of the array is less than 2 we know its already sorted
     if len(arr) < 2:
         return arr
     else:
+        # the pivot will be the first item in the array
         pivot = arr[0]
+        # partition everything less than or equal the pivot starting from index 1 to end of the array
         less = [i for i in arr[1:] if i <= pivot]
+        # partition everything greater than the pivot starting from index 1 to end of the array
         greater = [i for i in arr[1:] if i > pivot ]
 
+        # return recursively quicksort on everything less than the pivot then add the pivot then add everything greater than the pivot recursively
         return quick_sort(less) + [pivot] + quick_sort(greater)
 
     return arr
