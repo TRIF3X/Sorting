@@ -73,12 +73,12 @@ def quick_sort( arr ):
     if len(arr) < 2:
         return arr
     else:
-        # the pivot will be the first item in the array
-        pivot = arr[0]
-        # partition everything less than or equal the pivot starting from index 1 to end of the array
-        less = [i for i in arr[1:] if i <= pivot]
-        # partition everything greater than the pivot starting from index 1 to end of the array
-        greater = [i for i in arr[1:] if i > pivot ]
+        # the pivot will be the last item in the array
+        pivot = arr[len(arr) -1]
+        # partition everything less than or equal the pivot starting from the last index to the beginning of the array
+        less = [i for i in arr[:-1] if i <= pivot]
+        # partition everything greater than the pivot starting from the last index to the beginning of the array
+        greater = [i for i in arr[:-1] if i > pivot ]
 
         # return recursively quicksort on everything less than the pivot then add the pivot then add everything greater than the pivot recursively
         return quick_sort(less) + [pivot] + quick_sort(greater)
