@@ -44,8 +44,19 @@ print(insertion_sort([78, 248, 61, 233, 11, 212, 142, 91, 197, 203, 192, 111, 23
 
 # STRETCH: implement the Bubble Sort function below
 def bubble_sort( arr ):
+    n = 1
+    swapped = True
+    while swapped:
+        swapped = False
+        for i in range(0, len(arr)-n):
+            if arr[i+1] < arr[i]:
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                swapped = True
+        n += 1
+        if not swapped:
+            return arr
 
-    return arr
+print(bubble_sort([78, 248, 61, 233, 11, 212, 142, 91, 197, 203, 192, 111, 234, 66, 178, 38, 73, 188, 211, 114]))
 
 
 # STRETCH: implement the Count Sort function below

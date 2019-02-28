@@ -74,7 +74,7 @@ def quick_sort( arr ):
         return arr
     else:
         # the pivot will be the last item in the array
-        pivot = arr[len(arr) -1]
+        pivot = arr[len(arr) -1 ]
         # partition everything less than or equal the pivot starting from the last index to the beginning of the array
         less = [i for i in arr[:-1] if i <= pivot]
         # partition everything greater than the pivot starting from the last index to the beginning of the array
@@ -90,6 +90,14 @@ arr1 = [78, 248, 61, 233, 11, 212, 142, 91, 197, 203, 192, 111, 234, 66, 178, 38
 print(quick_sort(arr1))
 
 # len(arr) -1 points to the last index because there is 21 numbers but indexes start at 0
+
+#choose pivot
+#compare all items to the pivot
+    #items smaller than the pivot 
+        #swap to the flag's position
+        #increment the flag
+    #items larger than the pivot stay in place
+#swap pivot into it's place (which we've defined with the flag)
 
 
 # STRETCH: implement the Timsort function below
